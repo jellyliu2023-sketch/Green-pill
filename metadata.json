@@ -1,0 +1,7 @@
+{
+  "name": "GreenPill: Drug Recycling Awareness",
+  "description": "A platform to promote safe drug recycling, featuring a pharmacy locator, expert insights, and campaign highlights.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
