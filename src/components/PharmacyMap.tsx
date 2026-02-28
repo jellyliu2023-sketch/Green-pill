@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import { Search, MapPin } from 'lucide-react';
 
 // Fix for default marker icons in Leaflet with React
@@ -55,13 +54,18 @@ export default function PharmacyMap() {
         </div>
       </div>
 
-      <div className="relative flex-1 min-h-[500px] border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+      <div className="relative h-[600px] w-full border border-slate-200 rounded-2xl overflow-hidden shadow-sm bg-slate-100 z-0">
         {/* @ts-ignore */}
-        <MapContainer center={mapCenter} zoom={zoom} scrollWheelZoom={true}>
+        <MapContainer 
+          center={mapCenter} 
+          zoom={zoom} 
+          scrollWheelZoom={true}
+          style={{ height: '100%', width: '100%' }}
+        >
           {/* @ts-ignore */}
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           />
           {PHARMACIES.map((pharmacy) => (
             <Marker key={pharmacy.id} position={pharmacy.position as [number, number]}>
