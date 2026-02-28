@@ -29,7 +29,7 @@ const CAMPAIGN_ACTIVITIES = [
       "Safe storage and disposal at home",
       "Corporate responsibility in drug lifecycle"
     ],
-    pptLink: "https://s2.aconvert.com/convert/p3r68-cdx67/alsux-qaqdm.pdf",
+    pptLink: "https://docs.google.com/presentation/d/13CWEEZKumsdbLgGXeheGiWtEO965FSf5/edit?usp=sharing&ouid=112394228557349354227&rtpof=true&sd=true",
     icon: FileText,
     image: "https://picsum.photos/seed/pharma-manager/800/600"
   },
@@ -59,7 +59,7 @@ const CAMPAIGN_ACTIVITIES = [
       "Community-driven health discussions",
       "Direct expert feedback loop"
     ],
-    pptLink: "https://s25.aconvert.com/convert/p3r68-cdx67/ccw7a-i2iyy.pdf",
+    pptLink: "https://docs.google.com/presentation/d/1U4rU-DoTCr4IruLcgWBfD9QswAuW7kmW/edit?usp=sharing&ouid=112394228557349354227&rtpof=true&sd=true",
     icon: HelpCircle,
     image: "https://picsum.photos/seed/qa-session/800/600"
   },
