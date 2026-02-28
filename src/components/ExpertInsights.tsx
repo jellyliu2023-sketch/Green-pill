@@ -5,21 +5,6 @@ import { ChevronLeft, ChevronRight, FileText, Users, FlaskConical, HelpCircle, T
 const CAMPAIGN_ACTIVITIES = [
   {
     id: 1,
-    type: "Featured Presentation",
-    title: "Campaign Strategy & Overview",
-    speaker: "GreenPill Project Lead",
-    description: "A comprehensive overview of our national drug recycling strategy, mission objectives, and long-term impact goals.",
-    details: [
-      "Strategic roadmap for 2024-2025",
-      "Key performance indicators and metrics",
-      "Partnership expansion plans"
-    ],
-    pptLink: "https://drive.google.com/file/d/1n4A5e-e80XijDDj1wtRt67vFA1RnVW4b/view?usp=drive_link",
-    icon: Presentation,
-    image: "https://picsum.photos/seed/strategy/800/600"
-  },
-  {
-    id: 2,
     type: "Lecture & Workshop",
     title: "Hospital Disposal Protocols",
     speaker: "Invited Medical Doctor",
@@ -29,12 +14,12 @@ const CAMPAIGN_ACTIVITIES = [
       "Hands-on guidance for waste categorization",
       "Safety protocols for handling medical chemicals"
     ],
-    pptLink: "https://s5.aconvert.com/convert/p3r68-cdx67/6h05t-felco.pdf",
+    pptLink: "https://drive.google.com/file/d/1n4A5e-e80XijDDj1wtRt67vFA1RnVW4b/view?usp=drive_link",
     icon: Users,
     image: "https://picsum.photos/seed/hospital-disposal/800/600"
   },
   {
-    id: 3,
+    id: 2,
     type: "Industry Perspective",
     title: "Hazards & Household Best Practices",
     speaker: "Pharmaceutical Company Manager",
@@ -49,7 +34,7 @@ const CAMPAIGN_ACTIVITIES = [
     image: "https://picsum.photos/seed/pharma-manager/800/600"
   },
   {
-    id: 4,
+    id: 3,
     type: "Interactive Experiment",
     title: "Experimental Comparison",
     speaker: "GreenPill Research Team",
@@ -64,7 +49,7 @@ const CAMPAIGN_ACTIVITIES = [
     image: "https://picsum.photos/seed/experiment-lab/800/600"
   },
   {
-    id: 5,
+    id: 4,
     type: "Engagement",
     title: "Interactive Q&A Session",
     speaker: "Campaign Facilitators",
@@ -79,7 +64,7 @@ const CAMPAIGN_ACTIVITIES = [
     image: "https://picsum.photos/seed/qa-session/800/600"
   },
   {
-    id: 6,
+    id: 5,
     type: "Action",
     title: "Community Collection Day",
     speaker: "Local Volunteers",
