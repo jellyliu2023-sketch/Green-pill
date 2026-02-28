@@ -1,130 +1,219 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronLeft, ChevronRight, Quote, User } from 'lucide-react';
+import { ChevronLeft, ChevronRight, FileText, Users, FlaskConical, HelpCircle, Truck, ExternalLink } from 'lucide-react';
 
-const EXPERT_SLIDES = [
+const CAMPAIGN_ACTIVITIES = [
   {
     id: 1,
-    expert: "Dr. Zhang Wei",
-    title: "Chief Pharmacist, Peking University Hospital",
-    quote: "Improper disposal of medications leads to environmental contamination and antibiotic resistance. Recycling is not just a choice, it's a responsibility.",
-    points: [
-      "Water source contamination risks",
-      "Soil degradation from chemical leaching",
-      "Accidental ingestion by wildlife"
+    type: "Lecture & Workshop",
+    title: "Hospital Disposal Protocols",
+    speaker: "Invited Medical Doctor",
+    description: "An in-depth introduction to how hospitals manage expired medications and hazardous pharmaceutical waste.",
+    details: [
+      "Proper disposal procedures in clinical settings",
+      "Hands-on guidance for waste categorization",
+      "Safety protocols for handling medical chemicals"
     ],
-    image: "https://picsum.photos/seed/expert1/400/400"
+    pptLink: "https://s5.aconvert.com/convert/p3r68-cdx67/6h05t-felco.pdf",
+    icon: Users,
+    image: "https://picsum.photos/seed/hospital-disposal/800/600"
   },
   {
     id: 2,
-    expert: "Prof. Li Ming",
-    title: "Environmental Scientist, Tsinghua University",
-    quote: "Our studies show that trace amounts of pharmaceuticals are appearing in urban water cycles. We need a closed-loop system for drug management.",
-    points: [
-      "The 'Silent Pollution' phenomenon",
-      "Long-term ecological impacts",
-      "Public health implications"
+    type: "Industry Perspective",
+    title: "Hazards & Household Best Practices",
+    speaker: "Pharmaceutical Company Manager",
+    description: "Understanding the environmental hazards of improper disposal and learning the best practices for safe household drug management.",
+    details: [
+      "Environmental impact of pharmaceutical leaching",
+      "Safe storage and disposal at home",
+      "Corporate responsibility in drug lifecycle"
     ],
-    image: "https://picsum.photos/seed/expert2/400/400"
+    pptLink: "https://s2.aconvert.com/convert/p3r68-cdx67/alsux-qaqdm.pdf",
+    icon: FileText,
+    image: "https://picsum.photos/seed/pharma-manager/800/600"
   },
   {
     id: 3,
-    expert: "Sarah Chen",
-    title: "Public Health Advocate",
-    quote: "Awareness is the first step. When people understand the 'why', the 'how' becomes a habit. Let's make drug recycling a household norm.",
-    points: [
-      "Community education programs",
-      "Simplified recycling logistics",
-      "Youth engagement in sustainability"
+    type: "Interactive Experiment",
+    title: "Experimental Comparison",
+    speaker: "GreenPill Research Team",
+    description: "A self-designed interactive activity comparing expired and unexpired medications to demonstrate chemical degradation.",
+    details: [
+      "Visual and chemical stability tests",
+      "Interactive audience participation",
+      "Real-time data observation"
     ],
-    image: "https://picsum.photos/seed/expert3/400/400"
+    pptLink: null,
+    icon: FlaskConical,
+    image: "https://picsum.photos/seed/experiment-lab/800/600"
+  },
+  {
+    id: 4,
+    type: "Engagement",
+    title: "Interactive Q&A Session",
+    speaker: "Campaign Facilitators",
+    description: "A dynamic Q&A session designed to address common myths and provide direct answers to audience concerns.",
+    details: [
+      "Addressing disposal misconceptions",
+      "Community-driven health discussions",
+      "Direct expert feedback loop"
+    ],
+    pptLink: "https://s25.aconvert.com/convert/p3r68-cdx67/ccw7a-i2iyy.pdf",
+    icon: HelpCircle,
+    image: "https://picsum.photos/seed/qa-session/800/600"
+  },
+  {
+    id: 5,
+    type: "Action",
+    title: "Community Collection Day",
+    speaker: "Local Volunteers",
+    description: "Our flagship expired medicine take-back activity, bringing the community together for collective environmental action.",
+    details: [
+      "Safe collection of household medications",
+      "On-site sorting and documentation",
+      "Direct transport to disposal facilities"
+    ],
+    pptLink: null,
+    icon: Truck,
+    image: "https://picsum.photos/seed/collection-day/800/600"
   }
 ];
 
 export default function ExpertInsights() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const next = () => setCurrentIndex((prev) => (prev + 1) % EXPERT_SLIDES.length);
-  const prev = () => setCurrentIndex((prev) => (prev - 1 + EXPERT_SLIDES.length) % EXPERT_SLIDES.length);
+  const next = () => setCurrentIndex((prev) => (prev + 1) % CAMPAIGN_ACTIVITIES.length);
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + CAMPAIGN_ACTIVITIES.length) % CAMPAIGN_ACTIVITIES.length);
+
+  const current = CAMPAIGN_ACTIVITIES[currentIndex];
 
   return (
     <div className="py-12">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4 italic">Expert Perspectives</h2>
+        <h2 className="text-3xl font-serif font-bold text-slate-900 mb-4 italic">Campaign Activities & Expert Lectures</h2>
         <p className="text-slate-500 max-w-2xl mx-auto">
-          Leading voices in medicine and environmental science discuss the critical importance of proper medication disposal.
+          Explore our onsite campaign journey, featuring expert lectures, interactive experiments, and community action.
         </p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-6xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            className="grid md:grid-cols-2 gap-8 items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            className="grid lg:grid-cols-5 gap-0 bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden"
           >
-            <div className="space-y-6">
-              <Quote className="h-12 w-12 text-brand-primary/20" />
-              <p className="text-xl md:text-2xl font-medium leading-relaxed text-slate-800 italic">
-                "{EXPERT_SLIDES[currentIndex].quote}"
-              </p>
-              
-              <div className="flex items-center gap-4">
-                <img 
-                  src={EXPERT_SLIDES[currentIndex].image} 
-                  alt={EXPERT_SLIDES[currentIndex].expert}
-                  className="h-16 w-16 rounded-full object-cover border-2 border-brand-primary"
-                  referrerPolicy="no-referrer"
-                />
-                <div>
-                  <h4 className="font-bold text-slate-900">{EXPERT_SLIDES[currentIndex].expert}</h4>
-                  <p className="text-sm text-slate-500">{EXPERT_SLIDES[currentIndex].title}</p>
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-slate-100">
-                <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Key Discussion Points</h5>
-                <ul className="grid grid-cols-1 gap-2">
-                  {EXPERT_SLIDES[currentIndex].points.map((point, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-slate-600">
-                      <div className="h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+            {/* Sidebar Navigation */}
+            <div className="lg:col-span-1 bg-slate-50 border-r border-slate-100 p-6 hidden lg:block">
+              <div className="space-y-2">
+                {CAMPAIGN_ACTIVITIES.map((activity, idx) => (
+                  <button
+                    key={activity.id}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-full text-left p-3 rounded-xl transition-all flex items-center gap-3 ${
+                      currentIndex === idx 
+                        ? "bg-brand-primary text-white shadow-md" 
+                        : "text-slate-500 hover:bg-white hover:text-brand-primary"
+                    }`}
+                  >
+                    <activity.icon className={`h-4 w-4 ${currentIndex === idx ? "text-white" : "text-brand-primary"}`} />
+                    <span className="text-xs font-bold uppercase tracking-tight truncate">{activity.title}</span>
+                  </button>
+                ))}
               </div>
             </div>
 
-            <div className="hidden md:block relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src={EXPERT_SLIDES[currentIndex].image} 
-                alt="Expert presentation"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary/60 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20">
-                  <p className="text-white text-sm font-medium">Presentation Slide #{currentIndex + 1}</p>
-                  <p className="text-white/70 text-xs">Sustainability in Healthcare 2024</p>
+            {/* Main Content Area */}
+            <div className="lg:col-span-4 grid md:grid-cols-2">
+              <div className="p-8 md:p-12 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-bold uppercase tracking-widest">
+                      {current.type}
+                    </span>
+                    <span className="text-slate-300">|</span>
+                    <span className="text-slate-400 text-xs font-medium">Activity {currentIndex + 1} of {CAMPAIGN_ACTIVITIES.length}</span>
+                  </div>
+                  
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2">{current.title}</h3>
+                  <p className="text-brand-primary font-medium mb-6 flex items-center gap-2">
+                    <Users className="h-4 w-4" /> {current.speaker}
+                  </p>
+                  
+                  <p className="text-slate-600 leading-relaxed mb-8 text-lg">
+                    {current.description}
+                  </p>
+
+                  <div className="space-y-4 mb-8">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400">Key Highlights</h4>
+                    <ul className="grid grid-cols-1 gap-3">
+                      {current.details.map((detail, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-slate-700">
+                          <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-brand-primary shrink-0" />
+                          <span className="text-sm">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-6 border-t border-slate-100">
+                  {current.pptLink && (
+                    <a 
+                      href={current.pptLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-brand-secondary text-white rounded-xl font-bold hover:bg-slate-800 transition-all shadow-lg"
+                    >
+                      <FileText className="h-5 w-5" /> View PPT Presentation <ExternalLink className="h-4 w-4 opacity-50" />
+                    </a>
+                  )}
+                  <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-brand-primary transition-all">
+                    Activity Photos
+                  </button>
+                </div>
+              </div>
+
+              <div className="relative h-64 md:h-auto overflow-hidden">
+                <img 
+                  src={current.image} 
+                  alt={current.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                
+                <div className="absolute bottom-8 left-8 right-8 text-white">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="h-10 w-10 rounded-full bg-brand-primary flex items-center justify-center">
+                      <current.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Onsite Campaign</p>
+                      <p className="text-sm font-bold">Live Workshop 2024</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex justify-center gap-4 mt-8">
+        {/* Mobile Controls */}
+        <div className="flex justify-center gap-4 mt-8 lg:hidden">
           <button 
             onClick={prev}
-            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-brand-primary transition-all shadow-sm"
+            className="p-4 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button 
             onClick={next}
-            className="p-3 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-brand-primary transition-all shadow-sm"
+            className="p-4 rounded-full bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 shadow-sm"
           >
             <ChevronRight className="h-6 w-6" />
           </button>

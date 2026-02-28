@@ -7,49 +7,49 @@ const CAMPAIGN_ASSETS = [
     id: 1,
     type: 'image',
     title: 'Community Collection Day',
-    description: 'Residents in Shanghai bringing their expired medications to local pharmacy collection points.',
-    url: 'https://picsum.photos/seed/campaign1/800/600',
-    category: 'Event'
+    description: 'Our flagship expired medicine take-back activity. Residents bringing their expired medications to local collection points.',
+    url: 'https://picsum.photos/seed/collection-day-1/800/600',
+    category: 'Action'
   },
   {
     id: 2,
     type: 'video',
-    title: 'The Journey of a Recycled Pill',
-    description: 'Educational video showing the safe incineration process for hazardous medical waste.',
-    url: 'https://picsum.photos/seed/campaign2/800/600',
+    title: 'Experimental Comparison',
+    description: 'A close-up of our interactive activity comparing expired and unexpired medications to show degradation.',
+    url: 'https://picsum.photos/seed/experiment-vid/800/600',
     category: 'Education'
   },
   {
     id: 3,
     type: 'image',
-    title: 'New Recycling Bins',
-    description: 'Sleek, secure medication disposal units installed in over 200 pharmacies this month.',
-    url: 'https://picsum.photos/seed/campaign3/800/600',
-    category: 'Infrastructure'
+    title: 'Doctor\'s Lecture Onsite',
+    description: 'Invited doctor introducing the proper disposal of expired medication in hospitals to a focused audience.',
+    url: 'https://picsum.photos/seed/doctor-lecture/800/600',
+    category: 'Expert'
   },
   {
     id: 4,
     type: 'image',
-    title: 'Youth Awareness Workshop',
-    description: 'Engaging the next generation in environmental stewardship through school programs.',
-    url: 'https://picsum.photos/seed/campaign4/800/600',
-    category: 'Education'
+    title: 'Hands-on Workshop',
+    description: 'Participants experiencing hospital pharmaceutical waste disposal procedures under professional guidance.',
+    url: 'https://picsum.photos/seed/hands-on/800/600',
+    category: 'Workshop'
   },
   {
     id: 5,
     type: 'video',
-    title: 'Expert Panel Highlights',
-    description: 'Key moments from our national symposium on pharmaceutical waste management.',
-    url: 'https://picsum.photos/seed/campaign5/800/600',
-    category: 'Event'
+    title: 'Pharma Manager Insights',
+    description: 'Highlights from the lecture on hazards of improper disposal and best practices for household safety.',
+    url: 'https://picsum.photos/seed/manager-talk/800/600',
+    category: 'Expert'
   },
   {
     id: 6,
     type: 'image',
-    title: 'Safe Disposal Guide',
-    description: 'Infographic distributed to households explaining which drugs can be recycled.',
-    url: 'https://picsum.photos/seed/campaign6/800/600',
-    category: 'Resource'
+    title: 'Q&A Interactive Session',
+    description: 'Our target audience engaging in a self-designed Q&A section to clarify disposal myths.',
+    url: 'https://picsum.photos/seed/qa-session-img/800/600',
+    category: 'Engagement'
   }
 ];
 
