@@ -46,7 +46,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: null,
     icon: FlaskConical,
-    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44e723f197.webp"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a4532343928.webp"
   },
   {
     id: 4,
@@ -177,23 +177,21 @@ export default function ExpertInsights() {
                 </div>
               </div>
 
-              <div className="relative h-64 md:h-auto overflow-hidden">
+              <div className="relative h-64 md:h-auto overflow-hidden bg-slate-50">
                 <img 
                   src={current.image} 
                   alt={current.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden md:block" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
-                <div className="absolute bottom-8 left-8 right-8 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="h-10 w-10 rounded-full bg-brand-primary flex items-center justify-center">
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <div className="flex items-center gap-3 mb-2 bg-black/40 backdrop-blur-sm p-3 rounded-2xl w-fit">
+                    <div className="h-10 w-10 rounded-full bg-brand-primary flex items-center justify-center shrink-0">
                       <current.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Onsite Campaign</p>
+                      <p className="text-[10px] font-bold uppercase tracking-widest opacity-90">Onsite Campaign</p>
                       <p className="text-sm font-bold">Live Workshop 2025</p>
                     </div>
                   </div>
