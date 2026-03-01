@@ -132,14 +132,14 @@ export default function App() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                   <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest mb-6">
-                    Local Drug Recycling Campaign
+                    Community Drug Recycling Campaign
                   </span>
                   <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tight">
-                    Protect Our Planet, <br />
-                    <span className="text-brand-primary font-serif italic">One Pill at a Time.</span>
+                    From Healing to Hazard,<br />
+                    <span className="text-brand-primary font-serif italic">Back to Safety.</span>
                   </h1>
                   <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Expired medications are hazardous waste. Join thousands of citizens across China in our mission to safely recycle outdated drugs and prevent environmental pollution.
+                    Expired medications are hazardous waste. Dozens of citizens across Shanghai in our mission to safely recycle outdated drugs and protect public health.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button 
@@ -223,9 +223,9 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-slate-500">Contact</h4>
               <ul className="space-y-4 text-slate-400">
-                <li>Beijing, Chaoyang District</li>
-                <li>contact@greenpill.org.cn</li>
-                <li>+86 10 8888 9999</li>
+                <li>Shanghai, Xuhui District</li>
+                <li>lamlam0901@gmail.com</li>
+                <li>+86 177 2146 7539</li>
               </ul>
             </div>
           </div>
