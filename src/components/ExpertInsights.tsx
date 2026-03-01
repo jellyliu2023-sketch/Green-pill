@@ -7,7 +7,7 @@ const CAMPAIGN_ACTIVITIES = [
     id: 1,
     type: "Lecture & Workshop",
     title: "Hospital Disposal Protocols",
-    speaker: "Invited Medical Doctor",
+    speaker: "Shengli Wang",
     description: "An in-depth introduction to how hospitals manage expired medications and hazardous pharmaceutical waste.",
     details: [
       "Proper disposal procedures in clinical settings",
@@ -16,7 +16,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: "https://drive.google.com/file/d/1n4A5e-e80XijDDj1wtRt67vFA1RnVW4b/view?usp=drive_link",
     icon: Users,
-    image: "https://picsum.photos/seed/hospital-disposal/800/600"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp"
   },
   {
     id: 2,
