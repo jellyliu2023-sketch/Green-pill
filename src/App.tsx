@@ -132,7 +132,7 @@ export default function App() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                   <span className="inline-block px-4 py-1.5 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest mb-6">
-                    National Drug Recycling Campaign
+                    Local Drug Recycling Campaign
                   </span>
                   <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 tracking-tight">
                     Protect Our Planet, <br />
@@ -196,7 +196,7 @@ export default function App() {
                 <span className="text-2xl font-bold tracking-tight">GreenPill</span>
               </div>
               <p className="text-slate-400 max-w-sm leading-relaxed mb-8">
-                GreenPill is a non-profit initiative dedicated to establishing a sustainable, national network for pharmaceutical waste management in China.
+                GreenPill is a non-profit initiative dedicated to establishing a sustainable, local network for pharmaceutical waste management in China.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-primary transition-colors">
