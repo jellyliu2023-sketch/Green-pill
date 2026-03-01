@@ -50,7 +50,7 @@ export default function App() {
               <div className="h-10 w-10 bg-brand-primary rounded-xl flex items-center justify-center text-white shadow-lg group-hover:rotate-12 transition-transform">
                 <Leaf className="h-6 w-6" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-slate-900">GreenPill</span>
+              <span className="text-xl font-bold tracking-tight text-slate-900">MedSafe</span>
             </div>
 
             {/* Desktop Nav */}
@@ -193,10 +193,10 @@ export default function App() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <Leaf className="h-8 w-8 text-brand-primary" />
-                <span className="text-2xl font-bold tracking-tight">GreenPill</span>
+                <span className="text-2xl font-bold tracking-tight">MedSafe</span>
               </div>
               <p className="text-slate-400 max-w-sm leading-relaxed mb-8">
-                GreenPill is a non-profit initiative dedicated to establishing a sustainable, local network for pharmaceutical waste management in China.
+                MedSafe is a non-profit initiative dedicated to establishing a sustainable, local network for pharmaceutical waste management in China.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-primary transition-colors">
@@ -231,7 +231,7 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-            <p>&copy; 2024 GreenPill Initiative. All rights reserved.</p>
+            <p>&copy; 2024 MedSafe Initiative. All rights reserved.</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

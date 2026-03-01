@@ -31,13 +31,13 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: "https://docs.google.com/presentation/d/13CWEEZKumsdbLgGXeheGiWtEO965FSf5/edit?usp=sharing&ouid=112394228557349354227&rtpof=true&sd=true",
     icon: FileText,
-    image: "https://picsum.photos/seed/pharma-manager/800/600"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44bcc1e834.webp"
   },
   {
     id: 3,
     type: "Interactive Experiment",
     title: "Experimental Comparison",
-    speaker: "GreenPill Research Team",
+    speaker: "MedSafe Research Team",
     description: "A self-designed interactive activity comparing expired and unexpired medications to demonstrate chemical degradation.",
     details: [
       "Visual and chemical stability tests",
@@ -46,7 +46,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: null,
     icon: FlaskConical,
-    image: "https://picsum.photos/seed/experiment-lab/800/600"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44e723f197.webp"
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: "https://docs.google.com/presentation/d/1U4rU-DoTCr4IruLcgWBfD9QswAuW7kmW/edit?usp=sharing&ouid=112394228557349354227&rtpof=true&sd=true",
     icon: HelpCircle,
-    image: "https://picsum.photos/seed/qa-session/800/600"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44f9ac539f.webp"
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: null,
     icon: Truck,
-    image: "https://picsum.photos/seed/collection-day/800/600"
+    image: "https://picui.ogmua.cn/s1/2026/03/01/69a4506047556.webp"
   }
 ];
 
@@ -194,7 +194,7 @@ export default function ExpertInsights() {
                     </div>
                     <div>
                       <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Onsite Campaign</p>
-                      <p className="text-sm font-bold">Live Workshop 2024</p>
+                      <p className="text-sm font-bold">Live Workshop 2025</p>
                     </div>
                   </div>
                 </div>

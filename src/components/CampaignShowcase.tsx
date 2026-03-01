@@ -60,7 +60,7 @@ export default function CampaignShowcase() {
         <div className="max-w-xl">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">Campaign in Action</h2>
           <p className="text-slate-500 text-lg">
-            Witness the impact of GreenPill across communities. From local collection events to educational workshops, we're making a difference.
+            Witness the impact of MedSafe across communities. From local collection events to educational workshops, we're making a difference.
           </p>
         </div>
         <div className="flex gap-2">
