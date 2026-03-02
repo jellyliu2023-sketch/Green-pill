@@ -16,12 +16,14 @@ import {
 import PharmacyMap from './components/PharmacyMap';
 import ExpertInsights from './components/ExpertInsights';
 import CampaignShowcase from './components/CampaignShowcase';
+import ActivityPhotos from './components/ActivityPhotos';
 import { cn } from './lib/utils';
 
-type View = 'home' | 'map' | 'experts' | 'campaign';
+type View = 'home' | 'map' | 'experts' | 'campaign' | 'activity-photos';
 
 export default function App() {
   const [activeView, setActiveView] = useState<View>('home');
+  const [selectedActivityId, setSelectedActivityId] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -31,8 +33,9 @@ export default function App() {
     { id: 'campaign' as View, label: 'Campaign Gallery', icon: ImageIcon },
   ];
 
-  const handleNavigate = (id: View) => {
+  const handleNavigate = (id: View, activityId: number | null = null) => {
     setActiveView(id);
+    setSelectedActivityId(activityId);
     setIsMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -170,8 +173,17 @@ export default function App() {
             {activeView === 'experts' && (
               <section className="py-12 md:py-20 bg-slate-50 min-h-[calc(100vh-80px)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <ExpertInsights />
+                  <ExpertInsights onViewPhotos={(id) => handleNavigate('activity-photos', id)} />
                 </div>
+              </section>
+            )}
+
+            {activeView === 'activity-photos' && (
+              <section className="min-h-[calc(100vh-80px)]">
+                <ActivityPhotos 
+                  activityId={selectedActivityId} 
+                  onBack={() => handleNavigate('experts')} 
+                />
               </section>
             )}
 

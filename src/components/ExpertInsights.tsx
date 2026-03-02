@@ -16,7 +16,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: "https://drive.google.com/file/d/1n4A5e-e80XijDDj1wtRt67vFA1RnVW4b/view?usp=drive_link",
     icon: Users,
-    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp"
+    image: "https://picui.ogmua.cn/s1/2026/03/02/69a4ee5c50e1a.webp"
   },
   {
     id: 2,
@@ -80,7 +80,11 @@ const CAMPAIGN_ACTIVITIES = [
   }
 ];
 
-export default function ExpertInsights() {
+interface ExpertInsightsProps {
+  onViewPhotos?: (id: number) => void;
+}
+
+export default function ExpertInsights({ onViewPhotos }: ExpertInsightsProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % CAMPAIGN_ACTIVITIES.length);
@@ -171,26 +175,32 @@ export default function ExpertInsights() {
                       <FileText className="h-5 w-5" /> View PPT Presentation <ExternalLink className="h-4 w-4 opacity-50" />
                     </a>
                   )}
-                  <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-brand-primary transition-all">
+                  <button 
+                    onClick={() => onViewPhotos?.(current.id)}
+                    className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:border-brand-primary transition-all"
+                  >
                     Activity Photos
                   </button>
                 </div>
               </div>
 
-              <div className="relative h-64 md:h-auto overflow-hidden bg-slate-50">
+              <div className="relative h-64 md:h-auto overflow-hidden bg-slate-100">
                 <img 
                   src={current.image} 
                   alt={current.title}
-                  className="absolute inset-0 w-full h-full object-contain"
+                  className="absolute inset-0 w-full h-full object-contain z-0"
                   referrerPolicy="no-referrer"
                 />
                 
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="flex items-center gap-3 mb-2 bg-black/40 backdrop-blur-sm p-3 rounded-2xl w-fit">
-                    <div className="h-10 w-10 rounded-full bg-brand-primary flex items-center justify-center shrink-0">
+                {/* Subtle bottom gradient for text contrast - not foggy */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10" />
+                
+                <div className="absolute bottom-6 left-6 right-6 text-white z-20">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="h-10 w-10 rounded-full bg-brand-primary flex items-center justify-center shrink-0 shadow-lg">
                       <current.icon className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="drop-shadow-md">
                       <p className="text-[10px] font-bold uppercase tracking-widest opacity-90">Onsite Campaign</p>
                       <p className="text-sm font-bold">Live Workshop 2025</p>
                     </div>
