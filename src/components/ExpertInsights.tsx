@@ -31,7 +31,7 @@ const CAMPAIGN_ACTIVITIES = [
     ],
     pptLink: "https://docs.google.com/presentation/d/13CWEEZKumsdbLgGXeheGiWtEO965FSf5/edit?usp=sharing&ouid=112394228557349354227&rtpof=true&sd=true",
     icon: FileText,
-    image: "https://picui.ogmua.cn/s1/2026/03/01/69a44bcc1e834.webp"
+    image: "https://picui.ogmua.cn/s1/2026/03/03/69a62bbeea64a.webp"
   },
   {
     id: 3,
