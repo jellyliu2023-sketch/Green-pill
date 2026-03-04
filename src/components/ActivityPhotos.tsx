@@ -35,7 +35,7 @@ const PHOTOS: Photo[] = [
   {
     id: 102,
     activityId: 1,
-    url: "https://picsum.photos/seed/hosp2/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp",
     title: "Safety Protocol Briefing",
     category: "Lecture",
     date: "Oct 2024",
@@ -44,7 +44,7 @@ const PHOTOS: Photo[] = [
   {
     id: 103,
     activityId: 1,
-    url: "https://picsum.photos/seed/hosp3/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a797265ee51.webp",
     title: "Medical Waste Container Setup",
     category: "Workshop",
     date: "Oct 2024",
@@ -53,7 +53,7 @@ const PHOTOS: Photo[] = [
   {
     id: 104,
     activityId: 1,
-    url: "https://picsum.photos/seed/hosp4/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a798074b4a4.webp",
     title: "Staff Training Session",
     category: "Lecture",
     date: "Oct 2024",
@@ -62,7 +62,7 @@ const PHOTOS: Photo[] = [
   {
     id: 105,
     activityId: 1,
-    url: "https://picsum.photos/seed/hosp5/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp",
     title: "Workshop Conclusion",
     category: "Workshop",
     date: "Oct 2024",
@@ -75,51 +75,6 @@ const PHOTOS: Photo[] = [
     activityId: 2,
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62bbeea64a.webp",
     title: "Industry Expert Talk",
-    category: "Seminar",
-    date: "Nov 2024",
-    location: "Tech Park Auditorium"
-  },
-  {
-    id: 201,
-    activityId: 2,
-    url: "https://picui.ogmua.cn/s1/2026/03/03/69a62bbeea64a.webp",
-    title: "Environmental Impact Panel",
-    category: "Seminar",
-    date: "Nov 2024",
-    location: "Tech Park Auditorium"
-  },
-  {
-    id: 202,
-    activityId: 2,
-    url: "",
-    title: "Corporate Responsibility Workshop",
-    category: "Workshop",
-    date: "Nov 2024",
-    location: "Tech Park Auditorium"
-  },
-  {
-    id: 203,
-    activityId: 2,
-    url: "https://picsum.photos/seed/ind3/800/600",
-    title: "Supply Chain Safety Discussion",
-    category: "Seminar",
-    date: "Nov-2024",
-    location: "Tech Park Auditorium"
-  },
-  {
-    id: 204,
-    activityId: 2,
-    url: "https://picsum.photos/seed/ind4/800/600",
-    title: "Pharma Lifecycle Presentation",
-    category: "Lecture",
-    date: "Nov 2024",
-    location: "Tech Park Auditorium"
-  },
-  {
-    id: 205,
-    activityId: 2,
-    url: "https://picsum.photos/seed/ind5/800/600",
-    title: "Industry Networking",
     category: "Seminar",
     date: "Nov 2024",
     location: "Tech Park Auditorium"
@@ -147,7 +102,7 @@ const PHOTOS: Photo[] = [
   {
     id: 302,
     activityId: 3,
-    url: "https://picui.ogmua.cn/s1/2026/03/03/69a62d2f915f1.webp",
+    url: "https://picui.ogmua.cn/s1/2026/03/03/69a62d77e0b64.webp",
     title: "Audience Participation Lab",
     category: "Interactive",
     date: "Dec 2024",
@@ -203,7 +158,7 @@ const PHOTOS: Photo[] = [
   {
     id: 402,
     activityId: 4,
-    url: "https://picsum.photos/seed/qa2/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a79ce8df958.webp",
     title: "Community Feedback Loop",
     category: "Q&A",
     date: "Jan 2025",
@@ -212,26 +167,8 @@ const PHOTOS: Photo[] = [
   {
     id: 403,
     activityId: 4,
-    url: "https://picsum.photos/seed/qa3/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a79cec4e449.webp",
     title: "Expert Panel Discussion",
-    category: "Engagement",
-    date: "Jan 2025",
-    location: "Xuhui District Hall"
-  },
-  {
-    id: 404,
-    activityId: 4,
-    url: "https://picsum.photos/seed/qa4/800/600",
-    title: "Public Health Q&A",
-    category: "Q&A",
-    date: "Jan 2025",
-    location: "Xuhui District Hall"
-  },
-  {
-    id: 405,
-    activityId: 4,
-    url: "https://picsum.photos/seed/qa5/800/600",
-    title: "Community Engagement Wrap-up",
     category: "Engagement",
     date: "Jan 2025",
     location: "Xuhui District Hall"
@@ -268,7 +205,7 @@ const PHOTOS: Photo[] = [
   {
     id: 503,
     activityId: 5,
-    url: "https://picsum.photos/seed/act3/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a79bdfad24f.webp",
     title: "Safe Disposal Bin Loading",
     category: "Action",
     date: "Feb 2025",
@@ -277,7 +214,7 @@ const PHOTOS: Photo[] = [
   {
     id: 504,
     activityId: 5,
-    url: "https://picsum.photos/seed/act4/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a79be2470fd.webp",
     title: "Community Collection Point",
     category: "Action",
     date: "Feb 2025",
@@ -286,7 +223,7 @@ const PHOTOS: Photo[] = [
   {
     id: 505,
     activityId: 5,
-    url: "https://picsum.photos/seed/act5/800/600",
+    url: "https://picui.ogmua.cn/s1/2026/03/04/69a79c31e3825.webp",
     title: "Final Sorting Check",
     category: "Action",
     date: "Feb 2025",
