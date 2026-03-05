@@ -14,20 +14,11 @@ const FEATURED_VIDEO = {
 
 const OTHER_VIDEOS = [
   {
-    id: 2,
-    title: 'Community Collection Highlights',
-    description: 'Witness the energy and participation at our recent community take-back event in Xuhui District.',
-    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/01/69a44bcc1e834.webp',
-    videoUrl: 'https://www.w3schools.com/html/movie.mp4',
-    category: 'Action',
-    duration: '1:30'
-  },
-  {
     id: 3,
     title: 'Expert Interview: Dr. Shengli Wang',
     description: 'Dr. Wang discusses the critical importance of safe medication disposal for public health.',
     thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp',
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    videoUrl: 'https://drive.google.com/file/d/1EofJhQdT6i4l15rI7AdEaRkSQmtHKgKq/view?usp=drive_link',
     category: 'Expert',
     duration: '4:12'
   },
@@ -42,21 +33,12 @@ const OTHER_VIDEOS = [
   },
   {
     id: 5,
-    title: 'Volunteer Training Session',
-    description: 'Ensuring safe handling and documentation through our comprehensive volunteer training program.',
+    title: 'Interactive Q&A Session',
+    description: 'Engaging with the community through a comprehensive question and answer session on safe disposal practices.',
     thumbnail: 'https://picui.ogmua.cn/s1/2026/03/03/69a63e5646571.webp',
     videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
     category: 'Workshop',
     duration: '5:05'
-  },
-  {
-    id: 6,
-    title: 'Public Awareness Campaign',
-    description: 'Highlights from our street-level awareness campaign across major Shanghai transit hubs.',
-    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a79be2470fd.webp',
-    videoUrl: 'https://www.w3schools.com/html/movie.mp4',
-    category: 'Engagement',
-    duration: '2:15'
   }
 ];
 
