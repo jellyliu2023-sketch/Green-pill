@@ -66,7 +66,7 @@ const CAMPAIGN_ACTIVITIES = [
   {
     id: 5,
     type: "Action",
-    title: "Community Collection Day",
+    title: "Community Initiative",
     speaker: "Local Volunteers",
     description: "Our flagship expired medicine take-back activity, bringing the community together for collective environmental action.",
     details: [
