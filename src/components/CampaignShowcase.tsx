@@ -1,169 +1,222 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, Image as ImageIcon, Video, X } from 'lucide-react';
+import { Play, Video, ChevronRight, Info, Volume2, Maximize2, Download, ExternalLink } from 'lucide-react';
 
-const CAMPAIGN_VIDEOS = [
-  {
-    id: 1,
-    title: 'MedSafe Initiative Overview',
-    description: 'A comprehensive look at our mission to establish a sustainable pharmaceutical waste management network in Shanghai.',
-    thumbnail: 'https://picsum.photos/seed/medsafe-vid/800/600',
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    category: 'Mission'
-  },
+const FEATURED_VIDEO = {
+  id: 1,
+  title: 'MedSafe Initiative Overview',
+  description: 'A comprehensive look at our mission to establish a sustainable pharmaceutical waste management network in Shanghai. This featured video highlights our core values and the impact of community-driven recycling.',
+  thumbnail: 'https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp',
+  videoUrl: 'https://drive.google.com/file/d/1xbnm0nvkQXMGhQ4O4qjsnml7xiSVnxxU/view?usp=sharing',
+  category: 'Mission',
+  duration: '2:45'
+};
+
+const OTHER_VIDEOS = [
   {
     id: 2,
     title: 'Community Collection Highlights',
     description: 'Witness the energy and participation at our recent community take-back event in Xuhui District.',
-    thumbnail: 'https://picsum.photos/seed/collection-vid/800/600',
+    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/01/69a44bcc1e834.webp',
     videoUrl: 'https://www.w3schools.com/html/movie.mp4',
-    category: 'Action'
+    category: 'Action',
+    duration: '1:30'
   },
   {
     id: 3,
     title: 'Expert Interview: Dr. Shengli Wang',
     description: 'Dr. Wang discusses the critical importance of safe medication disposal for public health.',
-    thumbnail: 'https://picsum.photos/seed/expert-vid/800/600',
+    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp',
     videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    category: 'Expert'
+    category: 'Expert',
+    duration: '4:12'
   },
   {
     id: 4,
     title: 'Interactive Lab Demonstration',
     description: 'Our research team demonstrates the chemical degradation of expired medications in a controlled environment.',
-    thumbnail: 'https://picsum.photos/seed/lab-vid/800/600',
-    videoUrl: 'https://www.w3schools.com/html/movie.mp4',
-    category: 'Education'
+    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/03/69a62c60b25f3.webp',
+    videoUrl: 'https://drive.google.com/file/d/1i4wWShpSOufM-UpGLgIFBiU6fjDu8mWc/view?usp=sharing',
+    category: 'Education',
+    duration: '3:20'
   },
   {
     id: 5,
     title: 'Volunteer Training Session',
-    description: 'Behind the scenes of our volunteer training program, ensuring safe handling and documentation.',
-    thumbnail: 'https://picsum.photos/seed/training-vid/800/600',
+    description: 'Ensuring safe handling and documentation through our comprehensive volunteer training program.',
+    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/03/69a63e5646571.webp',
     videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    category: 'Workshop'
+    category: 'Workshop',
+    duration: '5:05'
   },
   {
     id: 6,
     title: 'Public Awareness Campaign',
     description: 'Highlights from our street-level awareness campaign across major Shanghai transit hubs.',
-    thumbnail: 'https://picsum.photos/seed/awareness-vid/800/600',
+    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a79be2470fd.webp',
     videoUrl: 'https://www.w3schools.com/html/movie.mp4',
-    category: 'Engagement'
+    category: 'Engagement',
+    duration: '2:15'
   }
 ];
 
 export default function CampaignShowcase() {
-  const [activeVideo, setActiveVideo] = React.useState<string | null>(null);
-
   return (
-    <div className="py-16">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div className="max-w-xl">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Campaign in Action</h2>
-          <p className="text-slate-500 text-lg">
-            Watch MedSafe's impact across Shanghai. Our video gallery documents collection events, expert talks, and community engagement.
-          </p>
+    <div className="py-12">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-10 w-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary">
+                <Video className="h-6 w-6" />
+              </div>
+              <h2 className="text-4xl font-bold text-slate-900 tracking-tight">Campaign Cinema</h2>
+            </div>
+            <p className="text-slate-500 text-lg">
+              Explore our mission through visual storytelling. Click below to watch our featured campaign video.
+            </p>
+          </div>
         </div>
-        <div className="flex gap-2">
-          <span className="px-4 py-2 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-bold border border-brand-primary/20 flex items-center gap-2">
-            <Video className="h-4 w-4" /> Video Gallery
-          </span>
-        </div>
-      </div>
 
-      {/* Video Player Modal Overlay */}
-      <AnimatePresence>
-        {activeVideo && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-slate-900/90 backdrop-blur-sm"
-            onClick={() => setActiveVideo(null)}
-          >
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-4xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl"
-              onClick={e => e.stopPropagation()}
-            >
-              <button 
-                onClick={() => setActiveVideo(null)}
-                className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
-              >
-                <X className="h-6 w-6" />
-              </button>
-              <video 
-                src={activeVideo} 
-                controls 
-                autoPlay 
-                className="w-full h-full"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {CAMPAIGN_VIDEOS.map((video, index) => (
-          <motion.div
-            key={video.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 cursor-pointer"
-            onClick={() => setActiveVideo(video.videoUrl)}
-          >
-            <div className="relative aspect-video overflow-hidden">
+        <div className="flex flex-col gap-20">
+          {/* Main Content Area */}
+          <div className="w-full">
+            <div className="relative aspect-video bg-slate-100 rounded-[3rem] overflow-hidden shadow-2xl group border-8 border-white">
               <img 
-                src={video.thumbnail} 
-                alt={video.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src={FEATURED_VIDEO.thumbnail} 
+                alt={FEATURED_VIDEO.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/40 transition-colors" />
-              
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-slate-900 shadow-sm">
-                  {video.category}
-                </span>
+              <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
+                <a 
+                  href={FEATURED_VIDEO.videoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="h-24 w-24 rounded-full bg-brand-primary flex items-center justify-center text-white shadow-2xl hover:scale-110 transition-transform group/btn"
+                >
+                  <Play className="h-10 w-10 fill-current ml-1 group-hover/btn:scale-110 transition-transform" />
+                </a>
               </div>
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-16 w-16 rounded-full bg-brand-primary flex items-center justify-center text-white shadow-2xl transform scale-90 group-hover:scale-100 transition-all duration-300">
-                  <Play className="h-8 w-8 fill-current ml-1" />
+              
+              <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+                <div className="text-white">
+                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">
+                    {FEATURED_VIDEO.category}
+                  </span>
+                  <h3 className="text-2xl font-bold">{FEATURED_VIDEO.title}</h3>
+                </div>
+                <div className="px-4 py-2 rounded-full bg-black/40 backdrop-blur-md text-white text-xs font-bold">
+                  {FEATURED_VIDEO.duration}
                 </div>
               </div>
             </div>
 
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <Video className="h-4 w-4 text-brand-primary" />
-                <h3 className="font-bold text-slate-900 leading-tight">{video.title}</h3>
+            <div className="mt-10 p-10 bg-white rounded-[3rem] shadow-sm border border-slate-100 flex flex-col md:flex-row gap-10 items-center">
+              <div className="flex-grow">
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">About this Video</h3>
+                <p className="text-slate-600 text-xl leading-relaxed font-light">
+                  {FEATURED_VIDEO.description}
+                </p>
+                <div className="flex flex-wrap items-center gap-6 text-slate-400 text-sm mt-6">
+                  <span className="flex items-center gap-2"><Info className="h-5 w-5" /> Official Mission Statement</span>
+                  <span className="flex items-center gap-2"><Volume2 className="h-5 w-5" /> High Fidelity Audio</span>
+                </div>
               </div>
-              <p className="text-sm text-slate-500 leading-relaxed line-clamp-2">
-                {video.description}
-              </p>
+              
+              <div className="w-full md:w-auto flex-shrink-0">
+                <a 
+                  href={FEATURED_VIDEO.videoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-10 py-5 bg-brand-primary text-white font-bold rounded-full hover:bg-emerald-400 transition-all shadow-xl group"
+                >
+                  <Play className="h-5 w-5 fill-current" />
+                  Watch Full Video
+                  <ExternalLink className="h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
             </div>
-          </motion.div>
-        ))}
-      </div>
-      
-      <div className="mt-16 bg-brand-secondary rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full -mr-32 -mt-32 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/10 rounded-full -ml-32 -mb-32 blur-3xl" />
-        
-        <h3 className="text-3xl font-bold mb-4 relative z-10">Join the Movement</h3>
-        <p className="text-brand-primary/80 max-w-2xl mx-auto mb-8 relative z-10">
-          Your participation helps keep our water clean and our communities safe. Start your recycling journey today.
-        </p>
-        <button className="px-8 py-4 bg-brand-primary hover:bg-emerald-400 text-white font-bold rounded-full transition-all shadow-lg relative z-10">
-          Find a Collection Point
-        </button>
+          </div>
+
+          {/* Other Videos Section */}
+          <div>
+            <div className="flex items-center justify-between mb-10">
+              <h3 className="text-3xl font-bold text-slate-900">More from the Campaign</h3>
+              <div className="h-px flex-grow mx-8 bg-slate-100" />
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {OTHER_VIDEOS.map((video) => (
+                <motion.div 
+                  key={video.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-[2rem] overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group"
+                >
+                  <div className="relative aspect-video overflow-hidden">
+                    <img 
+                      src={video.thumbnail} 
+                      alt={video.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/40 transition-colors flex items-center justify-center">
+                      <a 
+                        href={video.videoUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="h-14 w-14 rounded-full bg-white text-brand-primary flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                      >
+                        <Play className="h-6 w-6 fill-current ml-1" />
+                      </a>
+                    </div>
+                    <div className="absolute bottom-3 right-3 px-2 py-1 rounded-lg bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold">
+                      {video.duration}
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <span className="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-2 block">
+                      {video.category}
+                    </span>
+                    <h4 className="text-xl font-bold text-slate-900 mb-3 line-clamp-1">{video.title}</h4>
+                    <p className="text-slate-500 text-sm line-clamp-2 mb-6 leading-relaxed">
+                      {video.description}
+                    </p>
+                    <a 
+                      href={video.videoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 hover:text-brand-primary transition-colors group/link"
+                    >
+                      Watch Video
+                      <ExternalLink className="h-4 w-4 opacity-50 group-hover/link:opacity-100 transition-opacity" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+const FooterPlaceholder = () => (
+  <div className="mt-16 bg-brand-secondary rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full -mr-32 -mt-32 blur-3xl" />
+    <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-primary/10 rounded-full -ml-32 -mb-32 blur-3xl" />
+    
+    <h3 className="text-3xl font-bold mb-4 relative z-10">Join the Movement</h3>
+    <p className="text-brand-primary/80 max-w-2xl mx-auto mb-8 relative z-10">
+      Your participation helps keep our water clean and our communities safe. Start your recycling journey today.
+    </p>
+    <button className="px-8 py-4 bg-brand-primary hover:bg-emerald-400 text-white font-bold rounded-full transition-all shadow-lg relative z-10">
+      Find a Collection Point
+    </button>
+  </div>
+);

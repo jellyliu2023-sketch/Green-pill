@@ -393,10 +393,13 @@ export default function ActivityPhotos({ activityId, onBack }: ActivityPhotosPro
                 <img 
                   src={photo.url} 
                   alt={photo.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 group-hover:blur-none blur-[2px] transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors flex items-center justify-center">
+                {/* Clarity Gradient Overlay - Blurred top that clears on hover */}
+                <div className="absolute inset-0 backdrop-blur-md [mask-image:linear-gradient(to_bottom,black,transparent_60%)] group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
+                
+                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/10 transition-colors flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                     <span className="px-6 py-2 bg-white rounded-full text-slate-900 font-bold text-sm shadow-xl">
                       View Details

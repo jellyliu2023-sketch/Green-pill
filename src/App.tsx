@@ -4,6 +4,7 @@ import {
   Leaf, 
   Map as MapIcon, 
   Presentation, 
+  Video,
   Image as ImageIcon, 
   Menu, 
   X,
@@ -30,7 +31,7 @@ export default function App() {
     { id: 'home' as View, label: 'Home', icon: HomeIcon },
     { id: 'map' as View, label: 'Pharmacy Map', icon: MapIcon },
     { id: 'experts' as View, label: 'Expert Insights', icon: Presentation },
-    { id: 'campaign' as View, label: 'Campaign Gallery', icon: ImageIcon },
+    { id: 'campaign' as View, label: 'Campaign Gallery', icon: Video },
   ];
 
   const handleNavigate = (id: View, activityId: number | null = null) => {
