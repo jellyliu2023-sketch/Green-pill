@@ -15,7 +15,7 @@ const FEATURED_VIDEO = {
 const OTHER_VIDEOS = [
   {
     id: 3,
-    title: 'Expert Interview: Dr. Shengli Wang',
+    title: 'Expert Lecture: Dr. Shengli Wang',
     description: 'Dr. Wang discusses the critical importance of safe medication disposal for public health.',
     thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp',
     videoUrl: 'https://drive.google.com/file/d/1EofJhQdT6i4l15rI7AdEaRkSQmtHKgKq/view?usp=drive_link',
@@ -30,15 +30,6 @@ const OTHER_VIDEOS = [
     videoUrl: 'https://drive.google.com/file/d/1i4wWShpSOufM-UpGLgIFBiU6fjDu8mWc/view?usp=sharing',
     category: 'Education',
     duration: '3:20'
-  },
-  {
-    id: 5,
-    title: 'Interactive Q&A Session',
-    description: 'Engaging with the community through a comprehensive question and answer session on safe disposal practices.',
-    thumbnail: 'https://picui.ogmua.cn/s1/2026/03/03/69a63e5646571.webp',
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
-    category: 'Workshop',
-    duration: '5:05'
   }
 ];
 
