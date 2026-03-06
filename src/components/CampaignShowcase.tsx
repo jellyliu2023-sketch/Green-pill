@@ -9,7 +9,7 @@ const FEATURED_VIDEO = {
   thumbnail: 'https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp',
   videoUrl: 'https://drive.google.com/file/d/11PBSOYomvQTkzzkhavKQdBYgsb0x649-/view?usp=sharing',
   category: 'Mission',
-  duration: '2:45'
+  duration: '4:37'
 };
 
 const OTHER_VIDEOS = [
@@ -20,7 +20,7 @@ const OTHER_VIDEOS = [
     thumbnail: 'https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp',
     videoUrl: 'https://drive.google.com/file/d/1EofJhQdT6i4l15rI7AdEaRkSQmtHKgKq/view?usp=drive_link',
     category: 'Expert',
-    duration: '4:12'
+    duration: '0:49'
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const OTHER_VIDEOS = [
     thumbnail: 'https://picui.ogmua.cn/s1/2026/03/03/69a62c60b25f3.webp',
     videoUrl: 'https://drive.google.com/file/d/1i4wWShpSOufM-UpGLgIFBiU6fjDu8mWc/view?usp=sharing',
     category: 'Education',
-    duration: '3:20'
+    duration: '2:07'
   }
 ];
 
