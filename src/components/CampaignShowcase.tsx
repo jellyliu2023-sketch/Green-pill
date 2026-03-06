@@ -7,7 +7,7 @@ const FEATURED_VIDEO = {
   title: 'MedSafe Initiative Overview',
   description: 'A comprehensive look at our mission to establish a sustainable pharmaceutical waste management network in Shanghai. This featured video highlights our core values and the impact of community-driven recycling.',
   thumbnail: 'https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp',
-  videoUrl: 'https://drive.google.com/file/d/11PBSOYomvQTkzzkhavKQdBYgsb0x649-/view?usp=drive_link',
+  videoUrl: 'https://drive.google.com/file/d/11PBSOYomvQTkzzkhavKQdBYgsb0x649-/view?usp=sharing',
   category: 'Mission',
   duration: '2:45'
 };
