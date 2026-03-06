@@ -163,7 +163,7 @@ export default function PharmacyMap() {
                   <h3 className="font-bold text-brand-secondary">{location.address}</h3>
                   <p className="text-xs text-slate-600 mt-1">{location.district}</p>
                   <p className="text-[10px] uppercase tracking-wider font-bold mt-2 text-brand-primary">
-                    {location.type === "clinic" ? "Medical Clinic" : "Recycling Point"}
+                    {location.type === "clinic" ? "Clinic" : "Recycle Pharmacy"}
                   </p>
                   <button className="mt-2 w-full text-xs bg-brand-primary text-white px-2 py-1.5 rounded hover:bg-brand-secondary transition-colors">
                     Get Directions
@@ -174,14 +174,26 @@ export default function PharmacyMap() {
           ))}
         </MapContainer>
         
-        <div className="absolute bottom-4 left-4 z-[1000] bg-white/90 backdrop-blur p-4 rounded-xl border border-slate-200 shadow-lg max-w-xs">
-          <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
+        <div className="absolute bottom-4 left-4 z-[1000] bg-white/95 backdrop-blur-sm p-4 rounded-2xl border border-slate-200 shadow-xl max-w-[200px]">
+          <h4 className="font-bold text-sm mb-3 flex items-center gap-2 text-slate-800">
             <MapPin className="h-4 w-4 text-brand-primary" />
-            Shanghai Network
+            Map Legend
           </h4>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            We have mapped recycling bins across all districts in Shanghai. Red markers indicate clinics, blue markers indicate general recycling points.
-          </p>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-[#ff4b4b] shadow-[0_0_8px_rgba(255,75,75,0.5)]" />
+              <span className="text-xs font-medium text-slate-600">Clinic</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-[#2b82cb] shadow-[0_0_8px_rgba(43,130,203,0.5)]" />
+              <span className="text-xs font-medium text-slate-600">Recycle Pharmacy</span>
+            </div>
+          </div>
+          <div className="mt-4 pt-3 border-t border-slate-100">
+            <p className="text-[10px] text-slate-400 leading-tight italic">
+              Authorized drug recycling points across Shanghai.
+            </p>
+          </div>
         </div>
       </div>
     </div>
