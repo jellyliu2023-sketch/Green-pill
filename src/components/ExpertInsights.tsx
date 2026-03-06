@@ -202,7 +202,7 @@ export default function ExpertInsights({ onViewPhotos }: ExpertInsightsProps) {
                     </div>
                     <div className="drop-shadow-md">
                       <p className="text-[10px] font-bold uppercase tracking-widest opacity-90">Onsite Campaign</p>
-                      <p className="text-sm font-bold">Live Workshop 2025</p>
+                      <p className="text-sm font-bold">Live Workshop 2026</p>
                     </div>
                   </div>
                 </div>

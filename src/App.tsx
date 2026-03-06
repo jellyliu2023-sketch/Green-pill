@@ -244,7 +244,7 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-            <p>&copy; 2024 MedSafe Initiative. All rights reserved.</p>
+            <p>&copy; 2026 MedSafe Initiative. All rights reserved.</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

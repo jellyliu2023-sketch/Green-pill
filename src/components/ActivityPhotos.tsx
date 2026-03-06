@@ -21,7 +21,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/02/69a4ee5c50e1a.webp",
     title: "Hospital Disposal Workshop",
     category: "Lecture",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Expert session detailing the safe handling of medical waste in hospital environments."
   },
@@ -31,7 +31,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a63b46f1b79.webp",
     title: "Clinical Waste Sorting",
     category: "Workshop",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Hands-on workshop where participants learn to categorize different types of clinical waste."
   },
@@ -41,7 +41,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a7966fb9a4f.webp",
     title: "Safety Protocol Briefing",
     category: "Lecture",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Dr. Wang explaining the critical safety protocols for pharmaceutical waste management."
   },
@@ -51,7 +51,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a797265ee51.webp",
     title: "Medical Waste Container Setup",
     category: "Workshop",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Demonstrating the correct setup of specialized containers for hazardous medical waste."
   },
@@ -61,7 +61,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a798074b4a4.webp",
     title: "Staff Training Session",
     category: "Lecture",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Comprehensive training for medical staff on new disposal regulations and best practices."
   },
@@ -71,7 +71,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/01/69a44a02b4cae.webp",
     title: "Workshop Conclusion",
     category: "Workshop",
-    date: "Oct 2024",
+    date: "Jan 2026",
     location: "Shanghai General Hospital",
     caption: "Participants discussing key takeaways and future implementation plans."
   },
@@ -83,7 +83,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62bbeea64a.webp",
     title: "Industry Expert Talk",
     category: "Seminar",
-    date: "Nov 2024",
+    date: "Jan 2026",
     location: "Tech Park Auditorium",
     caption: "A pharmaceutical industry manager sharing insights on corporate responsibility and household drug safety."
   },
@@ -95,7 +95,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/01/69a4532343928.webp",
     title: "Chemical Stability Experiment",
     category: "Interactive",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Visual demonstration of how medications degrade and change chemically over time."
   },
@@ -105,7 +105,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62c60b25f3.webp",
     title: "Medication Degradation Test",
     category: "Experiment",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Comparing expired and unexpired drugs to show physical and chemical changes."
   },
@@ -115,7 +115,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62d77e0b64.webp",
     title: "Audience Participation Lab",
     category: "Interactive",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Community members participating in simple tests to understand drug stability."
   },
@@ -125,7 +125,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62d89729eb.webp",
     title: "Chemical Reaction Demo",
     category: "Interactive",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Controlled demonstration of chemical reactions in improperly stored medications."
   },
@@ -135,7 +135,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62dd8876f4.webp",
     title: "Safety Gear Demonstration",
     category: "Interactive",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Teaching the importance of protective gear when handling unknown or degraded chemicals."
   },
@@ -145,7 +145,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62e55837e5.webp",
     title: "Experiment Results Analysis",
     category: "Experiment",
-    date: "Dec 2024",
+    date: "Jan 2026",
     location: "Community Center Lab",
     caption: "Reviewing the data collected during the interactive lab session."
   },
@@ -157,7 +157,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/01/69a44f9ac539f.webp",
     title: "Community Q&A Session",
     category: "Engagement",
-    date: "Jan 2025",
+    date: "Jan 2026",
     location: "Xuhui District Hall",
     caption: "An open forum for residents to ask questions about safe medication disposal."
   },
@@ -167,7 +167,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a62fde21485.webp",
     title: "Facilitator Discussion",
     category: "Engagement",
-    date: "Jan 2025",
+    date: "Jan 2026",
     location: "Xuhui District Hall",
     caption: "MedSafe facilitators addressing common myths about pharmaceutical waste."
   },
@@ -177,7 +177,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a79ce8df958.webp",
     title: "Community Feedback Loop",
     category: "Q&A",
-    date: "Jan 2025",
+    date: "Jan 2026",
     location: "Xuhui District Hall",
     caption: "Gathering valuable input from the community to improve our recycling network."
   },
@@ -187,7 +187,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a79cec4e449.webp",
     title: "Expert Panel Discussion",
     category: "Engagement",
-    date: "Jan 2025",
+    date: "Jan 2026",
     location: "Xuhui District Hall",
     caption: "A panel of experts providing direct answers to audience health and safety concerns."
   },
@@ -199,7 +199,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/01/69a4506047556.webp",
     title: "Collection Day Logistics",
     category: "Action",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "The MedSafe team coordinating the logistics for a successful community take-back event."
   },
@@ -209,7 +209,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/01/69a44bcc1e834.webp",
     title: "Volunteer Sorting Team",
     category: "Action",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "Dedicated volunteers meticulously sorting collected medications for safe disposal."
   },
@@ -219,7 +219,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/03/69a63e5646571.webp",
     title: "Transport to Disposal Facility",
     category: "Logistics",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "Securely loading collected waste for transport to a professional disposal facility."
   },
@@ -229,7 +229,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a79bdfad24f.webp",
     title: "Safe Disposal Bin Loading",
     category: "Action",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "Ensuring all hazardous waste is placed in appropriate, leak-proof bins."
   },
@@ -239,7 +239,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a79be2470fd.webp",
     title: "Community Collection Point",
     category: "Action",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "A busy collection point where residents bring their expired medications."
   },
@@ -249,7 +249,7 @@ const PHOTOS: Photo[] = [
     url: "https://picui.ogmua.cn/s1/2026/03/04/69a79c31e3825.webp",
     title: "Final Sorting Check",
     category: "Action",
-    date: "Feb 2025",
+    date: "Jan 2026",
     location: "MedSafe Collection Point",
     caption: "A final verification step to ensure all medications are correctly categorized before transport."
   }
