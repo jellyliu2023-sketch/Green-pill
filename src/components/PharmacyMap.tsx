@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
-import { Search, MapPin } from 'lucide-react';
+import { Search, MapPin, Navigation, Locate } from 'lucide-react';
 
 // Fix for default marker icons in Leaflet with React
 // @ts-ignore
@@ -18,6 +18,15 @@ L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
   shadowUrl: markerShadow,
 });
+
+// Component to handle map centering and zooming
+function MapController({ center, zoom }: { center: [number, number], zoom: number }) {
+  const map = useMap();
+  useEffect(() => {
+    map.setView(center, zoom);
+  }, [center, zoom, map]);
+  return null;
+}
 
 const LOCATIONS = [
   // 浦东新区
@@ -121,6 +130,37 @@ const redIcon = new L.Icon({
 export default function PharmacyMap() {
   const [mapCenter, setMapCenter] = useState<[number, number]>([31.2304, 121.4737]); // Shanghai Center
   const [zoom, setZoom] = useState(12);
+  const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
+
+  const handleLocateMe = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+      return;
+    }
+
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+        setMapCenter([latitude, longitude]);
+        setUserLocation([latitude, longitude]);
+        setZoom(15);
+        setIsLocating(false);
+      },
+      (error) => {
+        console.error("Error getting location:", error);
+        alert("Unable to retrieve your location. Please check your permissions.");
+        setIsLocating(false);
+      }
+    );
+  };
+
+  const handleGetDirections = (lat: number, lng: number, address: string) => {
+    // Amap (高德地图) URI format
+    const url = `https://uri.amap.com/marker?position=${lng},${lat}&name=${encodeURIComponent(address)}&src=medsafe&coordinate=wgs84&callnative=1`;
+    window.open(url, '_blank');
+  };
 
   return (
     <div className="flex flex-col h-full space-y-4">
@@ -129,13 +169,23 @@ export default function PharmacyMap() {
           <h2 className="text-2xl font-bold text-slate-900">Pharmacy Locator</h2>
           <p className="text-slate-500">Find authorized drug recycling points in Shanghai.</p>
         </div>
-        <div className="relative">
-          <input 
-            type="text" 
-            placeholder="Search district or address..." 
-            className="pl-10 pr-4 py-2 border border-slate-200 rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all w-64"
-          />
-          <Search className="absolute left-3 top-2.5 h-5 w-5 text-slate-400" />
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={handleLocateMe}
+            disabled={isLocating}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-50 hover:border-brand-primary transition-all shadow-sm disabled:opacity-50"
+          >
+            <Locate className={`h-4 w-4 ${isLocating ? 'animate-spin' : ''}`} />
+            {isLocating ? 'Locating...' : 'Find Near Me'}
+          </button>
+          <div className="relative">
+            <input 
+              type="text" 
+              placeholder="Search district or address..." 
+              className="pl-10 pr-4 py-2 border border-slate-200 rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-all w-64"
+            />
+            <Search className="absolute left-3 top-2.5 h-5 w-5 text-slate-400" />
+          </div>
         </div>
       </div>
 
@@ -147,11 +197,28 @@ export default function PharmacyMap() {
           scrollWheelZoom={true}
           style={{ height: '100%', width: '100%' }}
         >
+          <MapController center={mapCenter} zoom={zoom} />
+          {/* Amap Tiles */}
           {/* @ts-ignore */}
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.amap.com/">Amap</a>'
+            url="https://wprd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}"
+            subdomains="1234"
           />
+          
+          {userLocation && (
+            <Marker position={userLocation} icon={new L.Icon({
+              iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
+              shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+              popupAnchor: [1, -34],
+              shadowSize: [41, 41]
+            })}>
+              <Popup>You are here</Popup>
+            </Marker>
+          )}
+
           {LOCATIONS.map((location, idx) => (
             <Marker 
               key={idx} 
@@ -165,7 +232,11 @@ export default function PharmacyMap() {
                   <p className="text-[10px] uppercase tracking-wider font-bold mt-2 text-brand-primary">
                     {location.type === "clinic" ? "Clinic" : "Recycle Pharmacy"}
                   </p>
-                  <button className="mt-2 w-full text-xs bg-brand-primary text-white px-2 py-1.5 rounded hover:bg-brand-secondary transition-colors">
+                  <button 
+                    onClick={() => handleGetDirections(location.lat, location.lng, location.address)}
+                    className="mt-2 w-full text-xs bg-brand-primary text-white px-2 py-1.5 rounded hover:bg-brand-secondary transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Navigation className="h-3 w-3" />
                     Get Directions
                   </button>
                 </div>
