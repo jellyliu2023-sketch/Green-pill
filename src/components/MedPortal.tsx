@@ -75,7 +75,7 @@ export default function MedSafePortal({ onNavigateToMap }: MedPortalProps) {
       const prompt = `Analyze this medicine box image. Extract the following information in JSON format:
       {
         "name": "Name of the medicine",
-        "expiryDate": "Expiration date found (YYYY-MM-DD or similar)",
+        "expiryDate": "Expiration date found (YYYY-MM-DD or similar). Note: 'EXP' or 'EXP Date' on the box indicates the expiry date.",
         "isExpired": boolean (compare with current date: ${new Date().toISOString().split('T')[0]})
       }
       If you cannot find the info, return an error message in the JSON.`;
@@ -202,7 +202,7 @@ export default function MedSafePortal({ onNavigateToMap }: MedPortalProps) {
                   <Camera className="h-10 w-10 text-slate-400" />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-4">Ready to Scan</h4>
-                <p className="text-slate-400 mb-8">Position the medicine box so the name and expiry date are clearly visible.</p>
+                <p className="text-slate-400 mb-8">Position the medicine box so the name and expiry date (often marked as <span className="text-brand-primary font-bold">EXP</span>) are clearly visible.</p>
                 <button 
                   onClick={() => setIsScanning(true)}
                   className="bg-brand-primary text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-emerald-400 transition-all"
