@@ -12,15 +12,17 @@ import {
   Twitter,
   Mail,
   ArrowRight,
+  Scan,
   Home as HomeIcon
 } from 'lucide-react';
 import PharmacyMap from './components/PharmacyMap';
 import ExpertInsights from './components/ExpertInsights';
 import CampaignShowcase from './components/CampaignShowcase';
 import ActivityPhotos from './components/ActivityPhotos';
+import MedPortal from './components/MedPortal';
 import { cn } from './lib/utils';
 
-type View = 'home' | 'map' | 'experts' | 'campaign' | 'activity-photos';
+type View = 'home' | 'map' | 'experts' | 'campaign' | 'activity-photos' | 'portal';
 
 export default function App() {
   const [activeView, setActiveView] = useState<View>('home');
@@ -29,6 +31,7 @@ export default function App() {
 
   const navItems = [
     { id: 'home' as View, label: 'Home', icon: HomeIcon },
+    { id: 'portal' as View, label: 'Smart Portal', icon: Scan },
     { id: 'map' as View, label: 'Pharmacy Map', icon: MapIcon },
     { id: 'experts' as View, label: 'Expert Insights', icon: Presentation },
     { id: 'campaign' as View, label: 'Campaign Gallery', icon: Video },
@@ -147,16 +150,16 @@ export default function App() {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <button 
-                      onClick={() => handleNavigate('map')}
+                      onClick={() => handleNavigate('portal')}
                       className="w-full sm:w-auto px-8 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-emerald-400 transition-all shadow-xl flex items-center justify-center gap-2"
                     >
-                      Locate Recycling Point <ArrowRight className="h-5 w-5" />
+                      Scan Medicine <Scan className="h-5 w-5" />
                     </button>
                     <button 
-                      onClick={() => handleNavigate('experts')}
+                      onClick={() => handleNavigate('map')}
                       className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-bold rounded-full border border-slate-200 hover:border-brand-primary transition-all shadow-sm"
                     >
-                      Learn from Experts
+                      Locate Recycling Point
                     </button>
                   </div>
                 </div>
@@ -195,6 +198,14 @@ export default function App() {
                 </div>
               </section>
             )}
+
+            {activeView === 'portal' && (
+              <section className="py-12 md:py-20 bg-slate-50 min-h-[calc(100vh-80px)]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <MedPortal onNavigateToMap={() => handleNavigate('map')} />
+                </div>
+              </section>
+            )}
           </motion.div>
         </AnimatePresence>
       </main>
@@ -227,6 +238,7 @@ export default function App() {
             <div>
               <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-slate-500">Navigation</h4>
               <ul className="space-y-4">
+                <li><button onClick={() => handleNavigate('portal')} className="text-slate-400 hover:text-brand-primary transition-colors">Smart Portal</button></li>
                 <li><button onClick={() => handleNavigate('map')} className="text-slate-400 hover:text-brand-primary transition-colors">Pharmacy Locator</button></li>
                 <li><button onClick={() => handleNavigate('experts')} className="text-slate-400 hover:text-brand-primary transition-colors">Expert Insights</button></li>
                 <li><button onClick={() => handleNavigate('campaign')} className="text-slate-400 hover:text-brand-primary transition-colors">Campaign Gallery</button></li>
